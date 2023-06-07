@@ -1,0 +1,25 @@
+package aula_1;
+
+public class Condicionais {
+
+	public static void main(String[] args) {
+
+		int ouro = 100;
+		int prata = 70;
+		int bronze = 5;
+
+		if (ouro > prata ) {
+			if (ouro > bronze) {
+				System.out.println("Ouro é o mais pesado");	
+			}
+			
+		} else if (prata > ouro) {
+			if (prata > bronze) {
+				System.out.println("Prata é o mais pesado");				
+			}
+		} else
+			System.out.println("Bronze é o mais pesado");
+
+	}
+
+}
