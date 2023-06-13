@@ -22,8 +22,7 @@ public class ExFibonacci {
 	}
 
 
-public static int fibonacci(int n) {
-    
+	public static int fibonacci(int n) {    
     
 if (n <= 1) {
             return n;

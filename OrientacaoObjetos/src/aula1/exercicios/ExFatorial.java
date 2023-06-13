@@ -14,7 +14,7 @@ public class ExFatorial {
 		for (int i = 1; i <= num; i++) {
 		            fatorial *= i;
 		        }
-		        JOptionPane.showMessadeDialog("O fatorial de " + num + " é: " + fatorial);
+		        JOptionPane.showMessageDialog(null, "O fatorial de " + num + " é: " + fatorial);
 		    }
 
 }
