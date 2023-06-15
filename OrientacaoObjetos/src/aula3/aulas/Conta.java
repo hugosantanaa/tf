@@ -6,8 +6,8 @@ public abstract class Conta { //impede criar uma instancia
 
 	// ATRIBUTOS
 	protected Cliente cliente; 	//composição
-	protected long numeroConta;
-	private int  agencia;
+	protected final long numeroConta;
+	protected long agencia;
 	private String senhaConta;
 	protected Date dataAbertura;
 	protected double saldo;
@@ -15,7 +15,7 @@ public abstract class Conta { //impede criar uma instancia
 	
 
 	//CONSTRUTOR
-	public Conta(Cliente cliente, long numeroConta, double saldo) {
+	public Conta(Cliente cliente, long numeroConta, long agencia, double saldo) {
 	
 		this.cliente = cliente;
 		this.numeroConta = numeroConta;
@@ -30,11 +30,14 @@ public abstract class Conta { //impede criar uma instancia
 
 	// sacar
 	public boolean sacar(double valor) {
+		if(valor >0) {
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
 			return true;
+			}
 		}
 		return false;
+		
 	}
 
 	// depositar
