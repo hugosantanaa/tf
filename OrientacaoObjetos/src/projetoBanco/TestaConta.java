@@ -1,10 +1,10 @@
-package aula3.aulas;
+package projetoBanco;
 
 import java.text.ParseException;
 
 public class TestaConta {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, SaldoInsuficiente {
 
 		// tipos de investimento
 		CDB cdb = new CDB();
@@ -26,8 +26,8 @@ public class TestaConta {
 		contaHugo.consultar();
 		contaMariana.consultar();
 
-		contaHugo.sacar(5000);
-		contaMariana.sacar(10000);
+		contaHugo.sacar(50000);
+		contaMariana.sacar(100000);
 
 		contaHugo.consultar();
 		contaMariana.consultar();

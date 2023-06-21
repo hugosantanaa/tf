@@ -1,4 +1,4 @@
-	package aula3.aulas;
+	package projetoBanco;
 
 import java.util.Date;
 
@@ -29,12 +29,14 @@ public abstract class Conta { //impede criar uma instancia
 	}
 
 	// sacar
-	public boolean sacar(double valor) {
+	public boolean sacar (double valor) throws SaldoInsuficiente {
 		if(valor >0) {
 		if (this.saldo >= valor) {
 			this.saldo -= valor;
 			return true;
-			}
+			}else {
+		throw new SaldoInsuficiente("Saldo insuficiente para saque");
+		}
 		}
 		return false;
 		
@@ -50,10 +52,12 @@ public abstract class Conta { //impede criar uma instancia
 		
 
 	// transferir
-	public void transferir(Conta conta, double valor) {
+	public void transferir(Conta conta, double valor) throws SaldoInsuficiente {
 		boolean teste = this.sacar(valor);
 		if(teste==true) {
 			conta.depositar(valor);			
+		}else {
+			throw new SaldoInsuficiente("Saldo insuficiente para realizar transferencia");
 		}
 				
 	}

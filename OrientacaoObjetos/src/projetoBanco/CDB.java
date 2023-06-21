@@ -1,4 +1,4 @@
-package aula3.aulas;
+package projetoBanco;
 
 public class CDB implements Produto {
 
