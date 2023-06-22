@@ -1,12 +1,16 @@
 package TryCatch;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
-public class Usuario {
+public class Usuario implements Comparable<Usuario> {
 	
 	private int id;
 	private String nome, email, telefone, senha;
 	private Date dataCadastro;
+	private List<Usuario> list = new ArrayList<Usuario>();
 	
 	
 //	construtor
@@ -15,6 +19,17 @@ public class Usuario {
 	this.senha = senha;
 	this.dataCadastro = new Date (System.currentTimeMillis());
 }
+	
+	public List<Usuario> remover(String nome){
+		Iterator<Usuario> iterator = list.iterator();
+		while(iterator.hasNext()) {
+			Usuario usuario = iterator.next();
+			if(usuario.getNome() ==  nome) {
+				iterator.remove();
+			}
+		}
+		return list;
+	}
 
 
 
@@ -128,6 +143,12 @@ public class Usuario {
 			System.out.println("DATA DE CADASTRO : " + usuario.getDataCadastro());
 			System.out.println("-------------------------------------");
 		}
+	}
+
+	@Override
+	public int compareTo(Usuario o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 

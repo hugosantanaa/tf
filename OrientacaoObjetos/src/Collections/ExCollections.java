@@ -41,14 +41,5 @@ public class ExCollections {
 		
 	}
 
-	public List<Usuario> remover(String nome){
-		Iterator<Usuario> iterator = list.iterator();
-		while(iterator.hasNext()) {
-			Usuario usuario = iterator.next();
-			if(usuario.getNome() ==  nome) {
-				iterator.remove();
-			}
-		}
-		return list;
-	}
+	
 }
