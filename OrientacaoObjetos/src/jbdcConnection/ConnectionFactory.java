@@ -10,7 +10,7 @@ public class ConnectionFactory {
 	public Connection conectar () {
 		
 		try {
-			return DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "tm_hugo_santos", "020105");	
+			return DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "root", "root");	
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
