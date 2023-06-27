@@ -10,6 +10,7 @@ public class ExemploBD {
 //		try {
 //			return DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "root", "root");
 //		}catch (SQL Exception e) {
+//		System.out.println("Erro ao conectar");
 //			throw new RunTimeException(e);
 //		}
 //		
