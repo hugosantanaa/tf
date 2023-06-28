@@ -1,6 +1,8 @@
-package jbdcConnection;
+package br.com.fiap.model;
 
 import java.sql.Date;
+
+import br.com.br.util.CriptografiaUtils;
 
 public class Usuario {
 	
@@ -8,11 +10,14 @@ public class Usuario {
 	private String nome, senha;
 	Date dataCadastro;
 	
-	public Usuario(long id, String nome, String senha) {
-		this.id = id;
+	public Usuario(String nome, String senha) {
 		this.nome = nome;
-		this.senha = senha;
+		setSenha(senha);
 		this.dataCadastro = new Date(System.currentTimeMillis());
+	}
+
+	public Usuario() {
+		
 	}
 
 	public long getId() {
@@ -36,7 +41,11 @@ public class Usuario {
 	}
 
 	public void setSenha(String senha) {
-		this.senha = senha;
+		try {
+			this.senha = CriptografiaUtils.criptografar(senha);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public Date getDataCadastro() {
